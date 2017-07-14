@@ -26,7 +26,7 @@ function ItemDAO(database) {
 
     this.getCategories = function(callback) {
         "use strict";
-        var query = {$group:{_id:"$category",num:{$sum:1}}},{$sort:{_id:1}};
+        var query = {$group:{_id:"$category", num:{$sum:1}},$sort:{_id:1}};
         var cursor = this.db.collection('items').aggregate(query);
         console.log(cursor._id);
 
